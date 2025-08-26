@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind Css link  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Daisy UI link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Emergency Helpline</title>
+  </head>
+  <body>
+    <header>
+      <!-- Nav section  -->
+      <nav class="flex justify-between mx-14 py-6">
+        <div class="flex items-center">
+          <img class="w-12" src="assets/logo.png" alt="" />
+          <h2 class="text-[#006747] font-extrabold ml-2">
+            Emergency <br />
+            Service
+          </h2>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex bg-[#41FF6B15] rounded-full py-2 px-4">
+            <h2 class="font-semibold">0</h2>
+            <img class="w-7 ml-2" src="assets/heart.png" alt="" />
+          </div>
+          <div class="flex bg-[#41FF6B15] rounded-full py-2 px-4">
+            <h2 class="font-semibold">100</h2>
+            <img class="w-7 ml-2" src="assets/coin.png" alt="" />
+          </div>
+          <div class="flex bg-[#00A63E] rounded-full py-2 px-4 items-center">
+            <h2 class="text-sm text-white">2</h2>
+            <p class="ml-2 text-sm text-white">Copy</p>
+          </div>
+        </div>
+      </nav>
+      <!-- Banner Section  -->
+      <section
+        class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] h-[240px] py-5"
+      >
+        <div>
+          <img class="w-24 mx-auto" src="assets/logo-dark.png" alt="" />
+          <h3 class="font-bold text-3xl text-center text-white">
+            Emergency Service Directory
+          </h3>
+          <p class="text-center text-white pt-3">
+            Government Emergency Services at Your Fingertip – A Project by
+            Government of the People’s Republic of Bangladesh
+          </p>
+        </div>
+      </section>
+    </header>
+
+    <main class="bg-[#41FF6B15] h-100vw">
+      <!-- Card Section  -->
+      <section class="w-11/12 mx-auto py-10 grid grid-cols-12 border-3 gap-8">
+        <section class="card-section border-3 border-lime-300 col-span-9">
+          <div>
+            <div class="card bg-neutral text-neutral-content w-96">
+              <div class="card-body items-center text-center">
+                <h2 class="card-title">Cookies!</h2>
+                <p>We are using cookies for no reason.</p>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary">Accept</button>
+                  <button class="btn btn-ghost">Deny</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="border-3 border-red-500 h-10 col-span-3"></aside>
+      </section>
+    </main>
+  </body>
+</html>
