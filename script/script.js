@@ -1,10 +1,10 @@
-// document
-//   .getElementsByClassName("heart-icon")
-//   .addEventListener("click", function () {
-//     //   console.log("Heard icon clicked");
-//     const heartElement = document.getElementById("heart").innerText;
-//     console.log(heartElement);
-//   });
+let count = 0;
+const countElement = document.getElementById("count");
+const heartsButton = document.querySelectorAll(".heart-btn");
 
-const heartElement = document.getElementsByClassName("heart-icon");
-console.log(heartElement);
+heartsButton.forEach((button) => {
+  button.addEventListener("click", function () {
+    count++;
+    countElement.textContent = count;
+  });
+});
