@@ -1,4 +1,4 @@
-// Heart Icon Count
+// Heart Icon Function
 let count = 0;
 const countElement = document.getElementById("count");
 const heartsButton = document.querySelectorAll(".heart-btn");
@@ -9,12 +9,11 @@ heartsButton.forEach((button) => {
     countElement.textContent = count;
   });
 });
-
+// Call Button Function
 let coins = 100;
 const callButton = document.querySelectorAll(".call-btn");
 callButton.forEach((button) => {
   button.addEventListener("click", function () {
-    // console.log("Call Button Clicked");
     if (coins >= 20) {
       coins -= 20;
       document.getElementById("coin-count").textContent = coins;
@@ -26,61 +25,42 @@ callButton.forEach((button) => {
 
     const serviceName = card.querySelector(".service-name").textContent;
     const serviceNumber = card.querySelector(".service-number").textContent;
-    // console.log(serviceName, serviceNumber);
     alert(`Service: ${serviceName} ServiceNum: ${serviceNumber}`);
-
-    //And
   });
 });
 
-// callButton.forEach((button) => {
-//   button.addEventListener("click", function () {
-//     const cardContainer = document.getElementById("card-container");
+// Copy Button Function
 
-//     const newCard = document.createElement("div");
+let counts = 0;
+const copyCount = document.getElementById("copyCount");
+const copyBtn = document.querySelectorAll(".copyBtn");
 
-//     newCard.innerHTML = `
-//  <div class="bg-gray-50 p-5 rounded-lg my-5">
-//             <h4 class="font-bold text-[1.50rem]">Fire Service Number</h4>
-//             <span class="text-gray-500">999</span>
-//           </div>
-// `;
-//     cardContainer.append("");
-//   });
-// });
+copyBtn.forEach((button) => {
+  button.addEventListener("click", function () {
+    const serviceNumbers = button.parentNode.parentNode.children[3].innerText;
+    navigator.clipboard.writeText(serviceNumbers).then(() => {
+      alert(`Number Copied : ${serviceNumbers}`);
+    });
+    counts++;
+    copyCount.innerText = counts;
+  });
+});
 
-// const callButtons = document.querySelectorAll(".call-btn");
-// const historyCards = document.getElementById("history-section");
-// const clearBtn = document.getElementById("clear-history");
-// // console.log(callButtons, historyCards, clearBtn);
-
-// callButtons.forEach((button) => {
-//   button.addEventListener("click", function () {
-//     const card = button.closest(".card");
-
-//     const serviceName = card.querySelector(".service-name").textContent;
-//     const serviceNumber = card.querySelector(".service-number").textContent;
-
-//     const div = document.getElementById("div");
-//     div.classList.add("historyCards");
-//     div.innerHTML = `<strong>${serviceName}</strong> </br> Number : ${serviceNumber}`;
-
-//     historyCards.prepend("div");
-//   });
-// });
+// Time Function
 function getCurrentTime() {
   return new Date().toLocaleTimeString();
 }
-const cardButtons = document.getElementsByClassName("btn");
-// console.log(cardButtons);
 
+// Call & History Function
+
+const cardButtons = document.getElementsByClassName("call-btn");
 for (let cardBtns of cardButtons) {
   cardBtns.addEventListener("click", function () {
-    // console.log("btn clicked");
+    if (coins < 20) {
+      return;
+    }
     const serviceName = cardBtns.parentNode.parentNode.children[1].innerText;
     const serviceNumber = cardBtns.parentNode.parentNode.children[3].innerText;
-
-    // console.log(serviceNumber);
     const cardContainer = document.getElementById("cardContainer");
     const newCard = document.createElement("div");
     newCard.innerHTML = `
@@ -98,7 +78,7 @@ for (let cardBtns of cardButtons) {
   });
 }
 
-// clearHistory
+// ClearHistory Function
 const clearHistory = document.getElementById("clearHistory");
 
 clearHistory.addEventListener("click", () => {
